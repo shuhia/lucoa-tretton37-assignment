@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import { BootstrapVue, BIcon, BIconLinkedin, BIconGithub, BIconTwitter } from 'bootstrap-vue'
+import { BootstrapVue, BIcon, BIconSearch, BIconGridFill, BIconList, BIconLinkedin, BIconGithub, BIconTwitter } from 'bootstrap-vue'
 import App from './App.vue'
 
 Vue.config.productionTip = false
@@ -8,6 +8,9 @@ import './scss/main.scss'
 
 Vue.use(BootstrapVue)
 Vue.component('BIcon', BIcon)
+Vue.component('BIconSearch', BIconSearch)
+Vue.component('BIconGridFill', BIconGridFill)
+Vue.component('BIconList', BIconList)
 Vue.component('BIconLinkedin', BIconLinkedin)
 Vue.component('BIconGithub', BIconGithub)
 Vue.component('BIconTwitter', BIconTwitter)

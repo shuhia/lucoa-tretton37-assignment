@@ -1,4 +1,11 @@
 module.exports = {
+    css: {
+        loaderOptions: {
+            sass: {
+                additionalData: `@import "@/scss/utils/_variables.scss";`
+            }
+        }
+    },
     pages: {
       index: {
         // entry for the page
