@@ -1,5 +1,10 @@
 <template>
-    <h1>The fellowship of the tretton37</h1>
+    <div>
+        <h1>The fellowship of the tretton37</h1>
+        <b-icon-linkedin></b-icon-linkedin>
+        <b-icon-github></b-icon-github>
+        <b-icon-twitter></b-icon-twitter>
+    </div>
 </template>
 
 <script>

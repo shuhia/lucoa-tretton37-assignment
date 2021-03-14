@@ -1,0 +1,11 @@
+// Bootstrap SCSS import
+@import 'node_modules/bootstrap/scss/bootstrap.scss';
+@import 'node_modules/bootstrap-vue/src/index.scss';
+
+// Custom font import
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+// Global styling
+body {
+    font-family: 'Montserrat', sans-serif;
+}
