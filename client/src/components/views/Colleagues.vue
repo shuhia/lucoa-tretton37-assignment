@@ -4,10 +4,9 @@
             The fellowship of the tretton37
         </h1>
 
-        <!-- TODO: Rewrite toolbar section with BootstrapVue components -->
-        <section class="colleagues-page__toolbar container-fluid shadow-sm">
-            <div class="row no-gutters">
-                <div class="col-8">
+        <b-container class="colleagues-page__toolbar shadow-sm" fluid>
+            <b-row no-gutters>
+                <b-col cols="8">
                     <b-input-group>
                         <template #append>
                             <b-input-group-text>
@@ -19,9 +18,9 @@
                             placeholder="Filter grid/list"
                         ></b-form-input>
                     </b-input-group>
-                </div>
+                </b-col>
 
-                <div class="col d-flex justify-content-end">
+                <b-col class="d-flex justify-content-end">
                     <b-button-group>
                         <b-button
                             variant="light"
@@ -38,9 +37,9 @@
                             <b-icon-list></b-icon-list>
                         </b-button>
                     </b-button-group>
-                </div>
-            </div>
-        </section>
+                </b-col>
+            </b-row>
+        </b-container>
 
         <b-container
             v-if="layout === 'grid'"
