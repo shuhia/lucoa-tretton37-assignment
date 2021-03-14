@@ -44,14 +44,16 @@
 
         <b-container
             v-if="layout === 'grid'"
-            class="colleagues-page__grid shadow-sm"
+            class="colleagues-page__grid"
             fluid
         >
-            <b-row cols-xs="1" cols-md="4">
-                <b-col v-for="c in colleagues" :key="c.name">
-                    {{ c.name }}
-                    {{ c.office }}
-                    <img :src="c.image" />
+            <b-row cols="1" cols-md="2" cols-lg="3" cols-xl="4">
+                <b-col v-for="c in colleagues" :key="c.name" class="mb-4">
+                    <Card
+                        :title="c.name"
+                        :subtitle="c.office"
+                        :imgSrc="c.image"
+                    />
                 </b-col>
             </b-row>
         </b-container>
@@ -68,13 +70,17 @@
 
 <script>
 import axios from "axios";
+import Card from "../Card";
 
 export default {
     name: "Colleagues",
+    components: {
+        Card,
+    },
     data: () => {
         return {
             filter: "",
-            layout: "list",
+            layout: "grid",
             colleagues: [],
         };
     },
@@ -95,7 +101,6 @@ export default {
 <style lang="scss" scoped>
 .colleagues-page {
     background: $color-gray-light;
-    height: 100vh;
     padding: 1.5rem;
 }
 
@@ -109,5 +114,10 @@ export default {
     background: $color-white;
     padding: 1rem;
     margin-bottom: 1.5rem;
+}
+
+.colleagues-page__grid {
+    padding-left: 0;
+    padding-right: 0;
 }
 </style>
