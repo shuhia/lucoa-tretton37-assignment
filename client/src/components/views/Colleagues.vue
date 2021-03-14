@@ -23,10 +23,18 @@
 
                 <div class="col d-flex justify-content-end">
                     <b-button-group>
-                        <b-button variant="light" @click="layout = 'grid'">
+                        <b-button
+                            variant="light"
+                            :pressed="layout === 'grid'"
+                            @click="layout = 'grid'"
+                        >
                             <b-icon-grid-fill></b-icon-grid-fill>
                         </b-button>
-                        <b-button variant="light" @click="layout = 'list'">
+                        <b-button
+                            variant="light"
+                            :pressed="layout === 'list'"
+                            @click="layout = 'list'"
+                        >
                             <b-icon-list></b-icon-list>
                         </b-button>
                     </b-button-group>
