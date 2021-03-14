@@ -4,7 +4,7 @@ import App from './App.vue'
 
 Vue.config.productionTip = false
 
-import './scss/main.scss'
+import './styles/main.scss'
 
 Vue.use(BootstrapVue)
 Vue.component('BIcon', BIcon)
