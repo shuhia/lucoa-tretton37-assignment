@@ -4,6 +4,7 @@
             The fellowship of the tretton37
         </h1>
 
+        <!-- TODO: Rewrite toolbar section with BootstrapVue components -->
         <section class="colleagues-page__toolbar container-fluid shadow-sm">
             <div class="row no-gutters">
                 <div class="col-8">
@@ -33,22 +34,52 @@
             </div>
         </section>
 
-        <section
+        <b-container
             v-if="layout === 'grid'"
-            class="colleagues-page__grid"
-        ></section>
+            class="colleagues-page__grid shadow-sm"
+            fluid
+        >
+            <b-row cols-xs="1" cols-md="4">
+                <b-col v-for="c in colleagues" :key="c.name">
+                    {{ c.name }}
+                    {{ c.office }}
+                    <img :src="c.image" />
+                </b-col>
+            </b-row>
+        </b-container>
 
-        <b-list-group v-else></b-list-group>
+        <b-list-group class="colleagues-page__list shadow-sm" v-else>
+            <b-list-group-item v-for="c in colleagues" :key="c.name">
+                {{ c.name }}
+                {{ c.office }}
+                <img :src="c.image" />
+            </b-list-group-item>
+        </b-list-group>
     </section>
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
     name: "Colleagues",
     data: () => {
         return {
+            filter: "",
             layout: "list",
+            colleagues: [],
         };
+    },
+    methods: {
+        getColleagues() {
+            axios
+                .get("http://localhost:3000/get/colleagues")
+                .then((resp) => (this.colleagues = resp.data))
+                .catch((err) => console.log(err));
+        },
+    },
+    mounted() {
+        this.getColleagues();
     },
 };
 </script>
@@ -69,5 +100,6 @@ export default {
 .colleagues-page__toolbar {
     background: $color-white;
     padding: 1rem;
+    margin-bottom: 1.5rem;
 }
 </style>
