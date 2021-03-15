@@ -58,10 +58,37 @@
         </b-container>
 
         <b-list-group class="colleagues-page__list shadow-sm" v-else>
-            <b-list-group-item v-for="c in colleagues" :key="c.name">
-                {{ c.name }}
-                {{ c.office }}
-                <img :src="c.image" />
+            <b-list-group-item
+                v-for="c in colleagues"
+                :key="c.name"
+                class="l-list-group-item"
+            >
+                <div class="l-list-group-item__content d-flex w-100 p-1">
+                    <b-img
+                        class="l-list-group-item__image mr-4"
+                        :src="c.image"
+                        fluid
+                    ></b-img>
+                    <div class="l-list-group-item__content-right w-100">
+                        <h5 class="l-list-group-item__title">
+                            {{ c.name }}
+                        </h5>
+                        <h6 class="l-list-group-item__subtitle">
+                            {{ c.office }}
+                        </h6>
+                        <div class="l-list-group-item__link-icons">
+                            <b-icon-linkedin
+                                class="l-list-group-item__link-icon"
+                            ></b-icon-linkedin>
+                            <b-icon-github
+                                class="l-list-group-item__link-icon"
+                            ></b-icon-github>
+                            <b-icon-twitter
+                                class="l-list-group-item__link-icon"
+                            ></b-icon-twitter>
+                        </div>
+                    </div>
+                </div>
             </b-list-group-item>
         </b-list-group>
     </section>
@@ -118,5 +145,30 @@ export default {
 .colleagues-page__grid {
     padding-left: 0;
     padding-right: 0;
+}
+
+.l-list-group-item__content {
+    word-wrap: break-word;
+}
+
+.l-list-group-item__image {
+    min-width: 100px;
+    object-fit: contain;
+}
+
+.l-list-group-item__content-right {
+    min-width: 0;
+}
+
+.l-list-group-item__title {
+    margin-bottom: 0.75rem;
+}
+
+.l-list-group-item__link-icons {
+    font-size: 1.25rem;
+}
+
+.l-list-group-item__link-icon:not(:last-child) {
+    margin-right: 0.5rem;
 }
 </style>
