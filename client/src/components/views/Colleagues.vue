@@ -10,10 +10,12 @@
                     <b-input-group>
                         <template #append>
                             <b-input-group-text>
-                                <b-icon-search></b-icon-search>
+                                <b-icon-filter></b-icon-filter>
                             </b-input-group-text>
                         </template>
                         <b-form-input
+                            v-model="filter"
+                            debounce="500"
                             type="text"
                             placeholder="Filter grid/list"
                         ></b-form-input>
@@ -47,7 +49,11 @@
             fluid
         >
             <b-row cols="1" cols-md="2" cols-lg="3" cols-xl="4">
-                <b-col v-for="c in colleagues" :key="c.name" class="mb-4">
+                <b-col
+                    v-for="c in filteredColleagues"
+                    :key="c.name"
+                    class="mb-4"
+                >
                     <Card
                         :title="c.name"
                         :subtitle="c.office"
@@ -59,7 +65,7 @@
 
         <b-list-group class="colleagues-page__list shadow-sm" v-else>
             <b-list-group-item
-                v-for="c in colleagues"
+                v-for="c in filteredColleagues"
                 :key="c.name"
                 class="l-list-group-item"
             >
@@ -109,6 +115,22 @@ export default {
             layout: "grid",
             colleagues: [],
         };
+    },
+    computed: {
+        filteredColleagues() {
+            const searchWord = this.filter.toLowerCase();
+
+            if (this.filter.startsWith("office:")) {
+                return this.colleagues.filter(
+                    (c) =>
+                        c.office.toLowerCase().indexOf(searchWord.slice(7)) > -1
+                );
+            }
+
+            return this.colleagues.filter(
+                (c) => c.name.toLowerCase().indexOf(searchWord) > -1
+            );
+        },
     },
     methods: {
         getColleagues() {
