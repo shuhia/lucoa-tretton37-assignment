@@ -148,6 +148,7 @@ export default {
 }
 
 .l-list-group-item__content {
+    max-height: 300px;
     word-wrap: break-word;
 }
 
