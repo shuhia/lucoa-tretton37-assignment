@@ -1,0 +1,12 @@
+[
+    {
+        "name": "Darth Vader",
+        "office": "Galactic Empire",
+        "image": "https://static.wikia.nocookie.net/starwars/images/b/b0/DarthVader-CotF.jpg/revision/latest/scale-to-width-down/1000?cb=20111223224557"
+    },
+    {
+        "name": "Obi-Wan Kenobi",
+        "office": "Jedi Order",
+        "image": "https://static.wikia.nocookie.net/starwars/images/4/4e/ObiWanHS-SWE.jpg/revision/latest?cb=20111115052816"
+    }
+]

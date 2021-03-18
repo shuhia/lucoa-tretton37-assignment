@@ -4,7 +4,11 @@
             The fellowship of the tretton37
         </h1>
 
-        <b-container class="colleagues-page__toolbar shadow-sm" fluid>
+        <b-container
+            class="colleagues-page__toolbar shadow-sm"
+            data-cy="toolbar-container"
+            fluid
+        >
             <b-row no-gutters>
                 <b-col cols="8">
                     <b-input-group>
@@ -18,6 +22,7 @@
                             debounce="500"
                             type="text"
                             placeholder="Filter grid/list"
+                            data-cy="search"
                         ></b-form-input>
                     </b-input-group>
                 </b-col>
@@ -28,6 +33,7 @@
                             variant="light"
                             :pressed="layout === 'grid'"
                             @click="layout = 'grid'"
+                            data-cy="grid-button"
                         >
                             <b-icon-grid-fill></b-icon-grid-fill>
                         </b-button>
@@ -35,6 +41,7 @@
                             variant="light"
                             :pressed="layout === 'list'"
                             @click="layout = 'list'"
+                            data-cy="list-button"
                         >
                             <b-icon-list></b-icon-list>
                         </b-button>
@@ -46,6 +53,7 @@
         <b-container
             v-if="layout === 'grid'"
             class="colleagues-page__grid"
+            data-cy="grid"
             fluid
         >
             <b-row cols="1" cols-md="2" cols-lg="3" cols-xl="4">
@@ -63,7 +71,11 @@
             </b-row>
         </b-container>
 
-        <b-list-group class="colleagues-page__list shadow-sm" v-else>
+        <b-list-group
+            v-else
+            class="colleagues-page__list shadow-sm"
+            data-cy="list-group"
+        >
             <b-list-group-item
                 v-for="c in filteredColleagues"
                 :key="c.name"
@@ -150,6 +162,7 @@ export default {
 .colleagues-page {
     background: $color-gray-light;
     padding: 1.5rem;
+    min-height: 100vh;
 }
 
 .colleagues-page__heading {

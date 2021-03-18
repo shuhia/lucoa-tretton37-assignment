@@ -51,7 +51,7 @@ export default {
 <style lang="scss" scoped>
 .l-card {
     border: none;
-    max-height: 400px;
+    height: 400px;
 }
 
 .l-card__content {
