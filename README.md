@@ -63,4 +63,4 @@ I used Cypress for E2E testing and the file structure are structured accordingly
 
 # Improvements
 
-[ ] modular components
+- [ ] modular components
