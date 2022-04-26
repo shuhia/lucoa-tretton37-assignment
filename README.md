@@ -5,9 +5,9 @@
 Frontend and Backend
 
 ```
-npm run install // to install all dependencies
-npm run start // to start backend and frontend
-npm run test // to test frontend with chrome, firefox and edge
+npm run install   // to install all dependencies
+npm run start     // to start backend and frontend
+npm run test      // to test frontend with chrome, firefox and edge
 ```
 
 Web application
@@ -60,3 +60,7 @@ The backend was designed with extendability and separation of concerns in mind. 
 The frontend isn't designed as well as the backend due to my lack of expertise when it comes to E2E testing, which I had to pick up in order to meet the required amount of points in each category, and running out of time. The main flaw lies in that there are a lot of components that are tightly coupled with the page view, of which could have been made modular instead for reusability and unit testing. For example, I could have made renderless components for e.g. the search input and the grid/list buttons, or create a base component with minimal markup which they could then extend. Perhaps this issue wouldn't exist if I had picked unit testing instead.
 
 I used Cypress for E2E testing and the file structure are structured accordingly to the Cypress docs. You could argue that the single test file I have could be splitted into multiple ones for each component in my web app, in which you wouldn't be incorrect. My thought there was that if someone in the future would like to add another page into the web app then I'd like the test files to be scoped to every page.
+
+# Improvements
+
+[ ] modular components
