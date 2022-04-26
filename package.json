@@ -1,5 +1,14 @@
 {
   "dependencies": {
-    "axios": "^0.21.1"
+    "axios": "^0.21.1",
+    "concurrently": "^7.1.0"
+  },
+  "scripts": {
+    "start": "concurrently \"npm run server-start\" \"npm run client-start\"",
+    "install": "concurrently \"npm run server-install\" \"npm run client-install\"",
+    "client-install": "cd client && npm install",
+    "server-install": "cd server && npm install",
+    "client-start": "cd client && npm run serve",
+    "server-start": "cd server && npm run dev"
   }
 }
