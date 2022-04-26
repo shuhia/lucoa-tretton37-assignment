@@ -6,9 +6,15 @@
   "scripts": {
     "start": "concurrently \"npm run server-start\" \"npm run client-start\"",
     "install": "concurrently \"npm run server-install\" \"npm run client-install\"",
+    "test": "concurrently \"npm run client-test\" \"npm run server-test\"",
     "client-install": "cd client && npm install",
     "server-install": "cd server && npm install",
     "client-start": "cd client && npm run serve",
-    "server-start": "cd server && npm run dev"
+    "server-start": "cd server && npm run dev",
+    "client-test": "npm run client-test-chrome && npm run client-test-firefox && npm run client-test-edge",
+    "client-test-chrome": "cd client && npx cypress run --browser chrome",
+    "client-test-firefox": "cd client && npx cypress run --browser firefox",
+    "client-test-edge": "cd client && npx cypress run --browser edge",
+    "server-test": ""
   }
 }
