@@ -5,11 +5,9 @@
 Frontend and Backend
 
 ```
-
 npm run install // to install all dependencies
 npm run start // to start backend and frontend
 npm run test // to test frontend with chrome, firefox and edge
-
 ```
 
 Web application
